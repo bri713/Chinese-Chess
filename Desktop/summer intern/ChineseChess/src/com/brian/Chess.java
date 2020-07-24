@@ -1,12 +1,10 @@
 package com.brian;
 
-public class Chess {
+public abstract class Chess {
     private boolean killed= false;
-    String name;
-    Player player;
-    boolean black;
-    Chess(boolean black){
-        this.black= black;
+    int black;
+    Chess(int b){
+        black= b;
     }
     public boolean isKilled(){
         return this.killed== true;
@@ -14,5 +12,8 @@ public class Chess {
     public void setKilled(boolean killed){
         this.killed= killed;
     }
-
+    public boolean equals(Chess b) {
+        return (this == b);
+    }
+    public abstract boolean valid(Board b, spot where, int x, int y, DetermineWin w);
 }

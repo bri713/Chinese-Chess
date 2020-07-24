@@ -9,40 +9,59 @@ public class Board {
     Board() {
         board= new spot[10][9];
 
-        board[0][0]= new spot(0, 0, new car(true));
-        board[0][8]= new spot(0, 8, new car(true));
-        board[0][1]= new spot(0, 1, new hor(true);
-        board[0][7]= new spot(0, 7,new hor(true);
-        board[0][2]= new spot(0, 2, new ele(true));
-        board[0][6]= new spot(0, 6, new ele(true));
-        board[0][3]= new spot(0, 3, new wiz(true));
-        board[0][5]= new spot(0, 5, new wiz(true));
-        board[0][4]= new spot(0, 4, new king(true));
-        board[2][1]= new spot(2, 1, new gun(true));
-        board[2][7]= new spot(2, 7, new gun(true));
-        board[4][0]= new spot(4, 0, new sol(true));
-        board[4][2]= new spot(4, 2, new sol(true));
-        board[4][4]= new spot(4, 4, new sol(true));
-        board[4][6]= new spot(4, 6, new sol(true));
-        board[4][8]= new spot(4, 8, new sol(true));
+        for(int i=0; i< 9; i++){
+            board[1][i]= new spot(1, i, new empty(2));
+            board[4][i]= new spot(4, i, new empty(2));
+            board[5][i]= new spot(5, i, new empty(2));
+            board[8][i]= new spot(8, i, new empty(2));
+        }
+        for(int i=2; i<7; i++){
+            board[2][i]= new spot(2, i, new empty(2));
+            board[7][i]= new spot(7, i, new empty(2));
+        }
+        board[2][0]= new spot(2, 0, new empty(2));
+        board[2][8]= new spot(2, 8, new empty(2));
+        board[7][0]= new spot(7, 0, new empty(2));
+        board[7][8]= new spot(7, 8, new empty(2));
 
-        board[5][0]= new spot(5, 0, new car(false));
-        board[5][8]= new spot(5, 8, new car(false));
-        board[5][1]= new spot(5, 1, new hor(false);
-        board[5][7]= new spot(5, 7,new hor(false);
-        board[5][2]= new spot(5, 2, new ele(false));
-        board[5][6]= new spot(5, 6, new ele(false));
-        board[5][3]= new spot(5, 3, new wiz(false));
-        board[5][5]= new spot(5, 5, new wiz(false));
-        board[5][4]= new spot(5, 4, new king(false));
-        board[7][1]= new spot(7, 1, new gun(false));
-        board[7][7]= new spot(7, 7, new gun(false));
-        board[9][0]= new spot(9, 0, new sol(false));
-        board[9][2]= new spot(9, 2, new sol(false));
-        board[9][4]= new spot(9, 4, new sol(false));
-        board[9][6]= new spot(9, 6, new sol(false));
-        board[9][8]= new spot(9, 8, new sol(false));
+        for(int i=1; i<8; i=i+2){
+            board[3][i]= new spot(3, i, new empty(2));
+            board[6][i]= new spot(6, i, new empty(2));
+        }
 
+        board[0][0]= new spot(0, 0, new car(0));
+        board[0][8]= new spot(0, 8, new car(0));
+        board[0][1]= new spot(0, 1, new hor(0));
+        board[0][7]= new spot(0, 7,new hor(0));
+        board[0][2]= new spot(0, 2, new ele(0));
+        board[0][6]= new spot(0, 6, new ele(0));
+        board[0][3]= new spot(0, 3, new wiz(0));
+        board[0][5]= new spot(0, 5, new wiz(0));
+        board[0][4]= new spot(0, 4, new king(0));
+        board[2][1]= new spot(2, 1, new gun(0));
+        board[2][7]= new spot(2, 7, new gun(0));
+        board[3][0]= new spot(3, 0, new sol(0));
+        board[3][2]= new spot(3, 2, new sol(0));
+        board[3][4]= new spot(3, 4, new sol(0));
+        board[3][6]= new spot(3, 6, new sol(0));
+        board[3][8]= new spot(3, 8, new sol(0));
+
+        board[9][0]= new spot(9, 0, new car(1));
+        board[9][8]= new spot(9, 8, new car(1));
+        board[9][1]= new spot(9, 1, new hor(1));
+        board[9][7]= new spot(9, 7,new hor(1));
+        board[9][2]= new spot(9, 2, new ele(1));
+        board[9][6]= new spot(9, 6, new ele(1));
+        board[9][3]= new spot(9, 3, new wiz(1));
+        board[9][5]= new spot(9, 5, new wiz(1));
+        board[9][4]= new spot(9, 4, new king(1));
+        board[7][1]= new spot(7, 1, new gun(1));
+        board[7][7]= new spot(7, 7, new gun(1));
+        board[6][0]= new spot(6, 0, new sol(1));
+        board[6][2]= new spot(6, 2, new sol(1));
+        board[6][4]= new spot(6, 4, new sol(1));
+        board[6][6]= new spot(6, 6, new sol(1));
+        board[6][8]= new spot(6, 8, new sol(1));    System.out.println(board[0][2].chess.black);
     }
     public spot get(int x, int y){
         return board[x][y];
