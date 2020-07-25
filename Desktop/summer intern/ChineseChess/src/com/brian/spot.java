@@ -9,6 +9,9 @@ public class spot {
         this.y= y;
         this.chess= c;
     }
+    public void setchess(Chess c){
+        this.chess= c;
+    }
     public int returnx(){
         return this.x;
     }

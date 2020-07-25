@@ -10,23 +10,23 @@ public class Board {
         board= new spot[10][9];
 
         for(int i=0; i< 9; i++){
-            board[1][i]= new spot(1, i, new empty(2));
-            board[4][i]= new spot(4, i, new empty(2));
-            board[5][i]= new spot(5, i, new empty(2));
-            board[8][i]= new spot(8, i, new empty(2));
+            board[1][i]= new spot(1, i, null);
+            board[4][i]= new spot(4, i, null);
+            board[5][i]= new spot(5, i, null);
+            board[8][i]= new spot(8, i, null);
         }
         for(int i=2; i<7; i++){
-            board[2][i]= new spot(2, i, new empty(2));
-            board[7][i]= new spot(7, i, new empty(2));
+            board[2][i]= new spot(2, i, null);
+            board[7][i]= new spot(7, i, null);
         }
-        board[2][0]= new spot(2, 0, new empty(2));
-        board[2][8]= new spot(2, 8, new empty(2));
-        board[7][0]= new spot(7, 0, new empty(2));
-        board[7][8]= new spot(7, 8, new empty(2));
+        board[2][0]= new spot(2, 0, null);
+        board[2][8]= new spot(2, 8, null);
+        board[7][0]= new spot(7, 0, null);
+        board[7][8]= new spot(7, 8, null);
 
         for(int i=1; i<8; i=i+2){
-            board[3][i]= new spot(3, i, new empty(2));
-            board[6][i]= new spot(6, i, new empty(2));
+            board[3][i]= new spot(3, i, null);
+            board[6][i]= new spot(6, i, null);
         }
 
         board[0][0]= new spot(0, 0, new car(0));
