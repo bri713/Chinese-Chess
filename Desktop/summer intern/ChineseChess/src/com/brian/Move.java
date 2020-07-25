@@ -14,17 +14,17 @@ public class Move {
         empty e= new empty(2);
         if(q==0){System.out.println("0");
             for(int i= where.x+1; i> x; i--){
-                if(b.get(i, y).equals(e))count++;
+                if(b.get(i, y).chess.black!=2)count++;
             }
         }
         if(q==1){System.out.println("1");
             for(int i= where.y+1; i> y; i--){
-                if(b.get(x, i).equals(e))count++;
+                if(b.get(x, i).chess.black!=2)count++;
             }
         }
         if(q==3){System.out.println("3");
             for(int i= where.y+1; i< y; i++){
-                if(b.get(x, i).equals(e))count++;
+                if(b.get(x, i).chess.black!=2)count++;
             }
         }
         if(q==2){System.out.print("2");
@@ -47,7 +47,7 @@ public class Move {
         return false;
     }
     public boolean emptyspot(Board b,  int x, int y){
-        if (b.get(x, y)==null){
+        if (b.get(x, y).chess.black!=2){
             return true;
         }
         return false;
@@ -60,13 +60,17 @@ public class Move {
         where.chess= null;
         s.x= x;
         s.y= y;
+        s.chess.setZero(b, x, y);
         s.chess= where.chess;
+        where.chess.setZero(b,where.x, where.y);
     }
     public void NoEat(Board b, spot where, int x, int y){
         spot s= b.get(x, y);
         where.chess= null;
         s.x= x;
         s.y= y;
+        s.chess.setZero(b, x, y);
         s.chess= where.chess;
+        where.chess.setZero(b,where.x, where.y);
     }
 }

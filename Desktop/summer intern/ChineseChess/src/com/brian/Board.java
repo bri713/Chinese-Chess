@@ -61,7 +61,7 @@ public class Board {
         board[6][2]= new spot(6, 2, new sol(1));
         board[6][4]= new spot(6, 4, new sol(1));
         board[6][6]= new spot(6, 6, new sol(1));
-        board[6][8]= new spot(6, 8, new sol(1));    System.out.println(board[0][2].chess.black);
+        board[6][8]= new spot(6, 8, new sol(1));
     }
     public spot get(int x, int y){
         return board[x][y];

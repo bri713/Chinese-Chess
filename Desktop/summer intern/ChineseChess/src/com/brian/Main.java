@@ -20,7 +20,6 @@ public class Main {
             which= s.which(b, count);
             whereX= s.whereX();
             whereY= s.whereY();
-            //count=count+2;System.out.println(count);
             if(count==0){
                 p1.turn(b, which, whereX, whereY, w, count);
                 count++;
