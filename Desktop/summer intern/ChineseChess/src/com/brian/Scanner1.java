@@ -10,16 +10,31 @@ public class Scanner1 {
         }
         int x= s.nextInt();
         int y= s.nextInt();
+        if(x>9 || y>8)return null;
+        if(b.get(x, y).chess==null){
+            System.out.println("No chess there. Try again");
+            return null;
+        }
         if(count!=b.get(x,y).chess.black)which(b, count);
         return b.get(x, y);
     }
     public int whereX() {
         System.out.println("please enter x-coor u want to move it");
-        return s.nextInt();
+        int x=s.nextInt();
+        if(x>9){
+            System.out.println("OutofBound. Try again");
+            x= whereX();
+        }
+        return x;
     }
     public int whereY() {
         System.out.println("please enter y-coor u want to move it");
-        return s.nextInt();
+        int y=s.nextInt();
+        if(y>8){
+            System.out.println("OutofBound. Try again");
+            y= whereY();
+        }
+        return y;
     }
 }
 

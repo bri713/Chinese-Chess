@@ -17,7 +17,6 @@ public abstract class Chess {
     }
     public void setZero(Board b, int x, int y){
         b.get(x, y).chess= null;
-        b.get(x, y).chess= new empty(2);
     }
     public abstract boolean valid(Board b, spot where, int x, int y, DetermineWin w);
 }
